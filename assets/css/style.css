@@ -126,18 +126,18 @@ margin:auto;
 }
 
 .login-btn{
-background:#d4af37;
-border:none;
-padding:10px 18px;
-color:black;
-border-radius:6px;
-cursor:pointer;
-font-weight:bold;
-
+  background:#d4af37;
+  border:none;
   padding:12px 22px;
   border-radius:999px;
   font-size:14px;
   font-weight:600;
+  color:black;
+  cursor:pointer;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
 }
 
 

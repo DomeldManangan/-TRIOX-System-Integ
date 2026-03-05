@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Celestix | Log In</title>
+
+  <!-- OPTIONAL: reuse your main fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@200..800&family=WindSong:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../login/assets/css/style.css" />
+</head>
+
+<body>
+
+  <main class="auth-page">
+    <section class="auth-card">
+
+      <!-- LEFT: FORM PANEL -->
+      <div class="auth-left">
+        <div class="brand-row">
+          <span class="brand-dot"></span>
+          <span class="brand-name">Celestix</span>
+        </div>
+
+        <h1 class="auth-title">Welcome back</h1>
+        <p class="auth-subtitle">Please enter your details to sign in.</p>
+
+        <form class="auth-form">
+          <label class="field">
+            <span>Email</span>
+            <input type="email" placeholder="Enter your email" required />
+          </label>
+
+          <label class="field">
+            <span>Password</span>
+            <input type="password" placeholder="••••••••" required />
+          </label>
+
+          <div class="auth-row">
+            <label class="check">
+              <input type="checkbox" />
+              <span>Remember for 30 days</span>
+            </label>
+
+            <a class="link" href="#">Forgot password</a>
+          </div>
+
+          <button class="btn primary" type="submit">Sign in</button>
+
+          <button class="btn ghost" type="button">
+            <span class="g-icon">G</span>
+            Sign in with Google
+          </button>
+
+          <p class="switch">
+            Don’t have an account? <a class="link" href="#">Sign up</a>
+          </p>
+        </form>
+
+        <p class="footer-note">© 2025 Celestix</p>
+      </div>
+
+      <!-- RIGHT: VISUAL PANEL -->
+      <div class="auth-right">
+        <!-- PLACEHOLDER: replace with your image -->
+        <div class="visual-box">
+          <!-- Option A: use an image -->
+          <!-- <img src="./assets/img/login-visual.png" alt="Login Visual" /> -->
+
+          <!-- Option B: placeholder text (remove later) -->
+            <img src="../login/assets/img/login pic.jpg" alt="Login Visual" class="login-image">
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+</body>
+</html>

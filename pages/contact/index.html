@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Celestix | Contact Us</title>
+
+  <!-- Your fonts (optional if already in main CSS) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@200..800&family=WindSong:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Main CSS (where your header CSS already is) -->
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Contact page CSS -->
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+
+  <!-- Navigation (YOUR HEADER) -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <h1 class="logo">Celestix</h1>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="./index.html#products">Fragrances</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a class="active" href="">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="../login/index.html" class="login-btn">Log In</a>
+    </div>
+  </header>
+
+  <!-- CONTACT SECTION -->
+  <main class="contact-page">
+    <div class="container contact-wrap">
+
+      <!-- LEFT: FORM CARD -->
+      <section class="contact-card">
+        <span class="contact-kicker">Get in touch</span>
+        <h2 class="contact-title">Let’s Chat, Reach Out to Us</h2>
+        <p class="contact-sub">
+          Have questions or feedback? Send us a message and we’ll respond as soon as possible.
+        </p>
+
+        <div class="contact-divider"></div>
+
+        <form class="contact-form">
+          <div class="two-col">
+            <label class="field">
+              <span>First Name</span>
+              <input type="text" placeholder="First name" required />
+            </label>
+
+            <label class="field">
+              <span>Last Name</span>
+              <input type="text" placeholder="Last name" required />
+            </label>
+          </div>
+
+          <label class="field">
+            <span>Email Address</span>
+            <input type="email" placeholder="Email address" required />
+          </label>
+
+          <label class="field">
+            <span>Message</span>
+            <textarea rows="6" placeholder="Leave us a message" required></textarea>
+          </label>
+
+          <label class="agree">
+            <input type="checkbox" required />
+            <span>I agree to the privacy policy</span>
+          </label>
+
+          <button class="send-btn" type="submit">Send Message</button>
+        </form>
+      </section>
+
+      <!-- RIGHT: IMAGE + CONTACT INFO -->
+      <aside class="contact-side">
+
+        <!-- Image Card -->
+        <div class="image-card">
+          <!-- Replace this image with yours -->
+          <img src="./assets/img/an_photos-perfume-2887560_1280.jpg" alt="Contact Visual" class="contact-image" />
+        </div>
+
+        <!-- Info Cards -->
+        <div class="info-card">
+          <div class="info-icon" aria-hidden="true">
+            <!-- mail icon -->
+            <svg viewBox="0 0 24 24" width="20" height="20">
+              <path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/>
+            </svg>
+          </div>
+          <div>
+            <h4>Email</h4>
+            <p>support@celestix.com</p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon" aria-hidden="true">
+            <!-- phone icon -->
+            <svg viewBox="0 0 24 24" width="20" height="20">
+              <path fill="currentColor" d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.07 21 3 13.93 3 5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2Z"/>
+            </svg>
+          </div>
+          <div>
+            <h4>Phone</h4>
+            <p>(+63) 900 000 0000</p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon" aria-hidden="true">
+            <!-- location icon -->
+            <svg viewBox="0 0 24 24" width="20" height="20">
+              <path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z"/>
+            </svg>
+          </div>
+          <div>
+            <h4>Address</h4>
+            <p>Celestix HQ, Metro City, PH</p>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+  </main>
+
+</body>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-top">
+
+    <!-- LEFT -->
+    <div class="footer-brand">
+      <h3 class="footer-logo">Celestix</h3>
+      <p class="footer-desc">
+        Curated fragrances from iconic brands—discover scents that match your style
+        and elevate every moment.
+      </p>
+    </div>
+
+    <!-- CENTER (SOCIAL) -->
+    <div class="footer-social">
+      <a href="#" class="social-circle" aria-label="Facebook">f</a>
+      <a href="#" class="social-circle" aria-label="Twitter">𝕏</a>
+      <a href="#" class="social-circle" aria-label="YouTube">▶</a>
+      <a href="#" class="social-circle" aria-label="Instagram">◎</a>
+      <a href="#" class="social-circle" aria-label="Pinterest">p</a>
+    </div>
+
+    <!-- RIGHT (SUBSCRIBE) -->
+    <div class="footer-subscribe">
+      <small class="footer-kicker">— Get updates</small>
+      <h4>Subscribe for latest updates</h4>
+
+      <form class="subscribe-form">
+        <input type="email" placeholder="Your email address" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+  </div>
+
+  <div class="container footer-bottom">
+    <a href="#" class="footer-link">Privacy Policy</a>
+    <a href="#" class="footer-link">About Us</a>
+    <a href="#" class="footer-link">Contact Us</a>
+    <span class="footer-copy">© 2023 Celestix</span>
+  </div>
+</footer>
+
+
+
+</html>

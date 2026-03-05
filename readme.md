@@ -6,7 +6,7 @@
 <div align="center">
   <a href="https://github.com/DomeldManangan/">
   <!-- TODO: If you want to add logo or banner you can add it here -->
-    <img src="./assests/img/Triox white invisible background.png" alt="Triox" width="130" height="100">
+    <img src="/assets/img/Triox white invisible background.png" alt="Triox" width="130" height="100">
   </a>
 <!-- TODO: Change Title to the name of the title of your Project -->
   <h3 align="center">Celestix</h3>

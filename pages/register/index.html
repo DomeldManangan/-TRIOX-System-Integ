@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Celestix | Register</title>
+
+  <!-- same fonts as login -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@200..800&family=WindSong:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- reuse same CSS -->
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+
+  <main class="auth-page">
+    <section class="auth-card">
+
+      <!-- LEFT: REGISTER FORM -->
+      <div class="auth-left">
+        <div class="brand-row">
+          <span class="brand-dot"></span>
+          <span class="brand-name">Celestix</span>
+        </div>
+
+        <h1 class="auth-title">Create account</h1>
+        <p class="auth-subtitle">Please fill in your details to sign up.</p>
+
+        <form class="auth-form">
+          <label class="field">
+            <span>Full Name</span>
+            <input type="text" placeholder="Enter your full name" required />
+          </label>
+
+          <label class="field">
+            <span>Email</span>
+            <input type="email" placeholder="Enter your email" required />
+          </label>
+
+          <label class="field">
+            <span>Password</span>
+            <input type="password" placeholder="Create a password" required />
+          </label>
+
+          <label class="field">
+            <span>Confirm Password</span>
+            <input type="password" placeholder="Confirm your password" required />
+          </label>
+
+          <div class="auth-row">
+            <label class="check">
+              <input type="checkbox" required />
+              <span>I agree to the terms</span>
+            </label>
+
+            <a class="link" href="#">Terms</a>
+          </div>
+
+          <button class="btn primary" type="submit">Create account</button>
+
+          <button class="btn ghost" type="button">
+            <span class="g-icon">G</span>
+            Sign up with Google
+          </button>
+
+          <p class="switch">
+            Already have an account? <a class="link" href="../login/index.html">Log in</a>
+          </p>
+        </form>
+
+        <p class="footer-note">© 2025 Celestix</p>
+      </div>
+
+      <!-- RIGHT: IMAGE PANEL -->
+      <div class="auth-right">
+        <div class="visual-box">
+          <!-- put your image here -->
+          <img src="./assets/img/register pic.jpg" alt="Register Visual" class="login-image">
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,409 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Bricolage Grotesque", system-ui, sans-serif;
+}
+
+html, body{
+  min-height:100%;
+}
+
+body{
+  background:
+    radial-gradient(circle at 20% 10%, rgba(212,175,55,0.05), transparent 40%),
+    radial-gradient(circle at 80% 20%, rgba(70,120,255,0.08), transparent 45%),
+    linear-gradient(to bottom, #05060a 0%, #090b14 45%, #0d1120 100%);
+  color:white;
+  padding-top:var(--nav-h);
+}
+
+/* PAGE */
+.fragrance-page{
+  padding: 40px 0 80px;
+}
+
+/* HERO TITLE */
+.fragrance-hero{
+  margin-bottom: 40px;
+}
+
+.fragrance-heading{
+  display:grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap:40px;
+  align-items:end;
+
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  padding-bottom:28px;
+}
+
+.fragrance-heading-left{
+  max-width:760px;
+}
+
+.fragrance-kicker{
+  display:inline-block;
+  margin-bottom:16px;
+  color:#d4af37;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:0.8px;
+  text-transform:uppercase;
+}
+
+.fragrance-heading h1{
+  font-size:88px;
+  line-height:0.92;
+  font-weight:900;
+  letter-spacing:-2px;
+  color:white;
+  margin-bottom:22px;
+}
+
+.fragrance-intro{
+  max-width:620px;
+  font-size:15px;
+  line-height:1.8;
+  color:rgba(255,255,255,0.70);
+  margin-bottom:22px;
+}
+
+.fragrance-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.fragrance-meta span{
+  padding:8px 14px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.10);
+  background:rgba(255,255,255,0.03);
+  color:rgba(255,255,255,0.72);
+  font-size:12px;
+}
+
+.fragrance-heading-right{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  justify-content:flex-end;
+  gap:24px;
+}
+
+.fragrance-side-text{
+  font-size:42px;
+  font-weight:900;
+  color:#d4af37;
+  text-transform:uppercase;
+}
+
+.fragrance-explore-btn{
+  padding:12px 20px;
+  border-radius:999px;
+  text-decoration:none;
+  background:#d4af37;
+  color:black;
+  font-weight:800;
+  font-size:14px;
+}
+
+/* responsive */
+@media (max-width: 1000px){
+  .fragrance-heading{
+    grid-template-columns:1fr;
+    align-items:start;
+  }
+
+  .fragrance-heading-right{
+    align-items:flex-start;
+  }
+
+  .fragrance-heading h1{
+    font-size:64px;
+  }
+
+  .fragrance-side-text{
+    font-size:30px;
+  }
+}
+
+@media (max-width: 600px){
+  .fragrance-heading h1{
+    font-size:46px;
+  }
+
+  .fragrance-intro{
+    font-size:14px;
+  }
+}
+
+/* TOOLBAR */
+.fragrance-toolbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:0.6px;
+  color:rgba(255,255,255,0.72);
+  margin-bottom:18px;
+}
+
+/* SHOWCASE */
+.fragrance-showcase{
+  border-top:1px solid rgba(255,255,255,0.08);
+  border-left:1px solid rgba(255,255,255,0.08);
+  border-right:1px solid rgba(255,255,255,0.08);
+}
+
+.fragrance-row{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  min-height:520px;
+}
+
+.fragrance-side,
+.fragrance-center{
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.fragrance-side{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:30px;
+  position:relative;
+  overflow:hidden;
+}
+
+.fragrance-side img{
+  width:100%;
+  max-width:240px;
+  height:auto;
+  object-fit:contain;
+  filter: drop-shadow(0 18px 35px rgba(0,0,0,0.35));
+}
+
+.product-left{
+  border-right:1px solid rgba(255,255,255,0.08);
+}
+
+.product-right{
+  border-left:1px solid rgba(255,255,255,0.08);
+}
+
+/* FRAGRANCE PAGE */
+.fragrance-page{
+  padding: 60px 0 100px;
+}
+
+.fragrance-header{
+  margin-bottom: 30px;
+}
+
+.fragrance-header h1{
+  font-size: 64px;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 18px;
+  line-height: 1;
+}
+
+.fragrance-topbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.68);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 16px;
+}
+
+/* GRID */
+.fragrance-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.fragrance-card{
+  position:relative;
+  min-height:520px;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:
+    radial-gradient(circle at 50% 70%, rgba(212,175,55,0.08), transparent 45%),
+    radial-gradient(circle at 50% 30%, rgba(70,120,255,0.06), transparent 45%),
+    rgba(255,255,255,0.02);
+
+  border-right:1px solid rgba(255,255,255,0.08);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.fragrance-card:nth-child(3n){
+  border-right:none;
+}
+
+.fragrance-card{
+  position: relative;
+  min-height: 520px;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(circle at 50% 70%, rgba(212,175,55,0.08), transparent 45%),
+    radial-gradient(circle at 50% 30%, rgba(70,120,255,0.06), transparent 45%),
+    rgba(255,255,255,0.02);
+
+  border-right: 1px solid rgba(255,255,255,0.08);
+
+  transition: background 0.4s ease;
+}
+
+.fragrance-card:last-child{
+  border-right: none;
+}
+
+.fragrance-card img{
+  width: auto;
+  height: 75%;
+  max-height: 420px;
+  object-fit: contain;
+
+  filter: drop-shadow(0 40px 60px rgba(0,0,0,0.45));
+
+  transition: transform 0.4s ease;
+}
+
+.fragrance-card::after{
+  content:"";
+  position:absolute;
+  bottom:80px;
+
+  width:140px;
+  height:20px;
+
+  background: radial-gradient(
+    ellipse,
+    rgba(255,255,255,0.15),
+    transparent 70%
+  );
+
+  filter: blur(10px);
+}
+
+/* HOVER OVERLAY */
+.fragrance-overlay{
+  position: absolute;
+  inset: 0;
+  padding: 34px 28px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  background:
+    linear-gradient(to top, rgba(5,6,10,0.96), rgba(5,6,10,0.72)),
+    radial-gradient(circle at top right, rgba(70,120,255,0.08), transparent 35%),
+    radial-gradient(circle at bottom left, rgba(212,175,55,0.08), transparent 35%);
+
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: 2;
+}
+
+.fragrance-overlay h3{
+  font-size: 28px;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.fragrance-overlay p{
+  font-size: 15px;
+  color: rgba(255,255,255,0.72);
+  margin-bottom: 16px;
+}
+
+.fragrance-price{
+  font-size: 22px;
+  font-weight: 900;
+  color: #d4af37;
+  margin-bottom: 22px;
+}
+
+.fragrance-overlay button{
+  padding: 12px 18px;
+  border: none;
+  border-radius: 999px;
+  background: #d4af37;
+  color: black;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+/* HOVER EFFECT */
+.fragrance-card:hover .fragrance-overlay{
+  opacity: 1;
+}
+
+.fragrance-card:hover img{
+  transform: scale(1.05);
+  opacity: 0.18;
+}
+
+.fragrance-card:hover{
+  background:
+    radial-gradient(circle at 50% 65%, rgba(212,175,55,0.18), transparent 55%),
+    radial-gradient(circle at 50% 25%, rgba(70,120,255,0.12), transparent 55%),
+    rgba(255,255,255,0.03);
+}
+
+.fragrance-card:hover img{
+  transform: translateY(-10px) scale(1.05);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1000px){
+  .fragrance-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .fragrance-card{
+    min-height: 420px;
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .fragrance-card:last-child{
+    border-bottom: none;
+  }
+
+  .fragrance-header h1{
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 600px){
+  .fragrance-header h1{
+    font-size: 36px;
+  }
+
+  .fragrance-overlay{
+    padding: 24px 20px;
+  }
+
+  .fragrance-overlay h3{
+    font-size: 22px;
+  }
+}

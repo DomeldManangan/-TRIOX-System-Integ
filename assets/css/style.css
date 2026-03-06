@@ -29,6 +29,35 @@ overflow:hidden;
 overflow:hidden;
 }
 
+section{
+  position: relative;
+  z-index: 1;
+}
+
+
+
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #05060a; /* dark background */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1b1b22;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2c2c34;
+}
+
+
+
 
 /* NAVBAR */
 

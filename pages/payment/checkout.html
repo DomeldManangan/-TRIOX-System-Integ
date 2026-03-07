@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | Celestix</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@200..800&family=WindSong:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+<!-- Navigation -->
+<header class="navbar">
+  <div class="container nav-container">
+    <h1 class="logo">Celestix</h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../fragrances/index.html">Fragrances</a></li>
+        <li><a href="../about/index.html">About</a></li>
+        <li><a href="../contact/index.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="../login/index.html" class="login-btn">Log In</a>
+  </div>
+</header>
+
+<!-- CHECKOUT SECTION -->
+<main class="checkout-page">
+  <div class="container">
+    <!-- Progress Steps -->
+    <div class="checkout-progress">
+      <div class="progress-step completed">
+        <div class="progress-number">1</div>
+        <span>Cart</span>
+      </div>
+      <div class="progress-line"></div>
+      <div class="progress-step active">
+        <div class="progress-number">2</div>
+        <span>Checkout</span>
+      </div>
+      <div class="progress-line"></div>
+      <div class="progress-step">
+        <div class="progress-number">3</div>
+        <span>Payment</span>
+      </div>
+    </div>
+
+    <div class="checkout-container">
+      <!-- LEFT SIDE: FORM -->
+      <div class="checkout-form-section">
+        <h2 class="checkout-title">Shipping Information</h2>
+        
+        <!-- Shipping Method -->
+        <div class="shipping-method">
+          <label class="shipping-option selected">
+            <input type="radio" name="shipping" value="delivery" checked>
+            <span>Delivery</span>
+          </label>
+          <label class="shipping-option">
+            <input type="radio" name="shipping" value="pickup">
+            <span>Pick up</span>
+          </label>
+        </div>
+
+        <!-- Form Fields -->
+        <form id="checkoutForm" class="checkout-form">
+          <div class="form-group">
+            <label for="fullName">Full name <span class="required">*</span></label>
+            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email address <span class="required">*</span></label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone number <span class="required">*</span></label>
+            <div class="phone-input">
+              <select id="countryCode" class="country-select">
+                <option value="+1">🇺🇸 +1</option>
+                <option value="+44">🇬🇧 +44</option>
+                <option value="+91">🇮🇳 +91</option>
+                <option value="+63">🇵🇭 +63</option>
+              </select>
+              <input type="tel" id="phone" name="phone" placeholder="123 456 7890" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="country">Country <span class="required">*</span></label>
+            <select id="country" name="country" required>
+              <option value="">Select country</option>
+              <option value="US">United States</option>
+              <option value="UK">United Kingdom</option>
+              <option value="CA">Canada</option>
+              <option value="AU">Australia</option>
+              <option value="PH">Philippines</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="city">City <span class="required">*</span></label>
+              <input type="text" id="city" name="city" placeholder="City" required>
+            </div>
+            <div class="form-group">
+              <label for="state">State <span class="required">*</span></label>
+              <input type="text" id="state" name="state" placeholder="State" required>
+            </div>
+            <div class="form-group">
+              <label for="zipCode">ZIP Code <span class="required">*</span></label>
+              <input type="text" id="zipCode" name="zipCode" placeholder="12345" required>
+            </div>
+          </div>
+
+          <label class="checkbox-group">
+            <input type="checkbox" id="terms" name="terms" required>
+            <span>I have read and agreed to the Terms and Conditions.</span>
+          </label>
+
+          <button type="button" class="btn-proceed" onclick="proceedToPayment()">Proceed to Payment</button>
+        </form>
+      </div>
+
+      <!-- RIGHT SIDE: CART SUMMARY -->
+      <div class="cart-summary-section">
+        <h3>Review your cart</h3>
+        
+        <div class="cart-items" id="cartItems">
+          <!-- Cart items will be loaded here via API -->
+          <div class="cart-item">
+            <div class="item-image">
+              <img src="../../assets/img/sauvage.avif" alt="Product">
+            </div>
+            <div class="item-details">
+              <h4>Dior Sauvage</h4>
+              <p>1x</p>
+            </div>
+            <div class="item-price">$120.00</div>
+          </div>
+        </div>
+
+        <!-- Discount Code -->
+        <div class="discount-section">
+          <input type="text" id="discountCode" placeholder="Discount code" class="discount-input">
+          <button type="button" class="btn-apply" onclick="applyDiscount()">Apply</button>
+        </div>
+
+        <!-- Order Summary -->
+        <div class="order-summary">
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span id="subtotal">$120.00</span>
+          </div>
+          <div class="summary-row">
+            <span>Shipping</span>
+            <span id="shipping">$10.00</span>
+          </div>
+          <div class="summary-row discount" id="discountRow" style="display:none;">
+            <span>Discount</span>
+            <span id="discount">-$0.00</span>
+          </div>
+          <div class="summary-row total">
+            <span>Total</span>
+            <span id="total">$130.00</span>
+          </div>
+        </div>
+
+        <div class="security-badge">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          <div>
+            <strong>Secure Checkout - SSL Encrypted</strong>
+            <p>Ensuring your financial and personal details are secure during every transaction.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-top">
+
+    <!-- LEFT -->
+    <div class="footer-brand">
+      <h3 class="footer-logo">Celestix</h3>
+      <p class="footer-desc">
+        Curated fragrances from iconic brands—discover scents that match your style
+        and elevate every moment.
+      </p>
+    </div>
+
+    <!-- CENTER (SOCIAL) -->
+    <div class="footer-social">
+      <a href="#" class="social-circle" aria-label="Facebook">f</a>
+      <a href="#" class="social-circle" aria-label="Twitter">𝕏</a>
+      <a href="#" class="social-circle" aria-label="YouTube">▶</a>
+      <a href="#" class="social-circle" aria-label="Instagram">◎</a>
+      <a href="#" class="social-circle" aria-label="Pinterest">p</a>
+    </div>
+
+    <!-- RIGHT (SUBSCRIBE) -->
+    <div class="footer-subscribe">
+      <small class="footer-kicker">— Get updates</small>
+      <h4>Subscribe for latest updates</h4>
+
+      <form class="subscribe-form">
+        <input type="email" placeholder="Your email address" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+  </div>
+
+  <div class="container footer-bottom">
+    <a href="#" class="footer-link">Privacy Policy</a>
+    <a href="#" class="footer-link">About Us</a>
+    <a href="#" class="footer-link">Contact Us</a>
+    <span class="footer-copy">© 2023 Celestix</span>
+  </div>
+</footer>
+
+<script src="./assets/js/checkout.js"></script>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Confirmation | Celestix</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@200..800&family=WindSong:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <style>
+    .confirmation-container {
+      max-width: 600px;
+      margin: 60px auto;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .success-icon {
+      width: 80px;
+      height: 80px;
+      background: rgba(46, 204, 113, 0.2);
+      border: 2px solid var(--success-color);
+      border-radius: 50%;
+      margin: 0 auto 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+    }
+
+    .confirmation-title {
+      font-size: 32px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--success-color);
+    }
+
+    .confirmation-message {
+      font-size: 16px;
+      color: var(--secondary-text);
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .order-details {
+      background: rgba(244, 210, 90, 0.05);
+      border: 1px solid rgba(244, 210, 90, 0.2);
+      border-radius: 8px;
+      padding: 20px;
+      margin: 30px 0;
+      text-align: left;
+    }
+
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border-color);
+      font-size: 14px;
+    }
+
+    .detail-row:last-child {
+      border-bottom: none;
+    }
+
+    .detail-label {
+      color: var(--secondary-text);
+    }
+
+    .detail-value {
+      color: var(--light-text);
+      font-weight: 600;
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .btn-action {
+      flex: 1;
+      padding: 14px;
+      border-radius: 8px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: inherit;
+      font-size: 15px;
+    }
+
+    .btn-home {
+      background: var(--primary-color);
+      color: #000;
+    }
+
+    .btn-home:hover {
+      background: #e8c944;
+      transform: translateY(-2px);
+    }
+
+    .btn-orders {
+      background: transparent;
+      color: var(--primary-color);
+      border: 2px solid var(--primary-color);
+    }
+
+    .btn-orders:hover {
+      background: rgba(244, 210, 90, 0.1);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<header class="navbar">
+  <div class="container nav-container">
+    <h1 class="logo">Celestix</h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../fragrances/index.html">Fragrances</a></li>
+        <li><a href="../about/index.html">About</a></li>
+        <li><a href="../contact/index.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="../login/index.html" class="login-btn">Log In</a>
+  </div>
+</header>
+
+<main class="checkout-page">
+  <div class="container">
+    <div class="confirmation-container">
+      <div class="success-icon">✓</div>
+      
+      <h2 class="confirmation-title">Order Confirmed!</h2>
+      <p class="confirmation-message">
+        Thank you for your purchase! Your order has been successfully submitted and is being prepared.
+      </p>
+
+      <div class="order-details">
+        <div class="detail-row">
+          <span class="detail-label">Order ID:</span>
+          <span class="detail-value" id="orderId">ORD-1234567890123</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Order Date:</span>
+          <span class="detail-value" id="orderDate">March 08, 2024</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Total Amount:</span>
+          <span class="detail-value" id="orderTotal">$165.88</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Payment Method:</span>
+          <span class="detail-value" id="paymentMethod">Credit Card</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Status:</span>
+          <span class="detail-value" style="color: var(--success-color);">Confirmed</span>
+        </div>
+      </div>
+
+      <p class="confirmation-message">
+        A confirmation email has been sent to your email address with tracking information. You can view your order status in your account.
+      </p>
+
+      <div class="action-buttons">
+        <button class="btn-action btn-home" onclick="goHome()">Continue Shopping</button>
+        <button class="btn-action btn-orders" onclick="viewOrders()">View My Orders</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-top">
+
+    <!-- LEFT -->
+    <div class="footer-brand">
+      <h3 class="footer-logo">Celestix</h3>
+      <p class="footer-desc">
+        Curated fragrances from iconic brands—discover scents that match your style
+        and elevate every moment.
+      </p>
+    </div>
+
+    <!-- CENTER (SOCIAL) -->
+    <div class="footer-social">
+      <a href="#" class="social-circle" aria-label="Facebook">f</a>
+      <a href="#" class="social-circle" aria-label="Twitter">𝕏</a>
+      <a href="#" class="social-circle" aria-label="YouTube">▶</a>
+      <a href="#" class="social-circle" aria-label="Instagram">◎</a>
+      <a href="#" class="social-circle" aria-label="Pinterest">p</a>
+    </div>
+
+    <!-- RIGHT (SUBSCRIBE) -->
+    <div class="footer-subscribe">
+      <small class="footer-kicker">— Get updates</small>
+      <h4>Subscribe for latest updates</h4>
+
+      <form class="subscribe-form">
+        <input type="email" placeholder="Your email address" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+  </div>
+
+  <div class="container footer-bottom">
+    <a href="#" class="footer-link">Privacy Policy</a>
+    <a href="#" class="footer-link">About Us</a>
+    <a href="#" class="footer-link">Contact Us</a>
+    <span class="footer-copy">© 2023 Celestix</span>
+  </div>
+</footer>
+
+<script>
+  // Load order confirmation data
+  document.addEventListener('DOMContentLoaded', function() {
+    const params = new URLSearchParams(window.location.search);
+    const orderId = params.get('orderId') || 'ORD-' + Date.now();
+    
+    document.getElementById('orderId').textContent = orderId;
+    document.getElementById('orderDate').textContent = new Date().toLocaleDateString('en-US', { 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric' 
+    });
+    
+    // Get order total from session if available
+    const orderData = JSON.parse(sessionStorage.getItem('lastOrder') || '{}');
+    if (orderData.total) {
+      document.getElementById('orderTotal').textContent = '$' + orderData.total.toFixed(2);
+    }
+    if (orderData.paymentMethod) {
+      document.getElementById('paymentMethod').textContent = orderData.paymentMethod;
+    }
+  });
+
+  function goHome() {
+    window.location.href = '../../index.html';
+  }
+
+  function viewOrders() {
+    // Navigate to orders page (not yet created)
+    alert('Orders page coming soon!');
+  }
+</script>
+</body>
+</html>

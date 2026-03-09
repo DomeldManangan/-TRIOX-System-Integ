@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment | Celestix</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@200..800&family=WindSong:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+<!-- Navigation -->
+<header class="navbar">
+  <div class="container nav-container">
+    <h1 class="logo">Celestix</h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../fragrances/index.html">Fragrances</a></li>
+        <li><a href="../about/index.html">About</a></li>
+        <li><a href="../contact/index.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="../login/index.html" class="login-btn">Log In</a>
+  </div>
+</header>
+
+<!-- PAYMENT SECTION -->
+<main class="payment-page">
+  <div class="container">
+    <!-- Progress Steps -->
+    <div class="checkout-progress">
+      <div class="progress-step completed">
+        <div class="progress-number">1</div>
+        <span>Cart</span>
+      </div>
+      <div class="progress-line"></div>
+      <div class="progress-step completed">
+        <div class="progress-number">2</div>
+        <span>Checkout</span>
+      </div>
+      <div class="progress-line"></div>
+      <div class="progress-step active">
+        <div class="progress-number">3</div>
+        <span>Payment</span>
+      </div>
+    </div>
+
+    <div class="payment-container">
+      <!-- LEFT SIDE: PAYMENT METHODS -->
+      <div class="payment-form-section">
+        <h2 class="payment-title">Select Payment Method</h2>
+        
+        <form id="paymentForm" class="payment-methods">
+          <!-- Card Payment -->
+          <label class="payment-method selected" onclick="selectPaymentMethod('card')">
+            <input type="radio" name="paymentMethod" value="card" checked>
+            <div class="method-icon card-icon">💳</div>
+            <div class="method-info">
+              <h3>Card</h3>
+              <p>Visa, Mastercard, Stripe</p>
+            </div>
+            <svg class="checkmark" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+          </label>
+
+          <!-- Divider -->
+          <div class="payment-divider">OR PAY WITH</div>
+
+          <!-- Google Pay -->
+          <label class="payment-method" onclick="selectPaymentMethod('googlepay')">
+            <input type="radio" name="paymentMethod" value="googlepay">
+            <div class="method-icon google-icon">
+              <img src="../../assets/img/googlepay.png" alt="Google Pay" width="30" height="30">
+            </div>
+            <div class="method-info">
+              <h3>Google Pay</h3>
+              <p>Fast and secure checkout</p>
+            </div>
+            <svg class="checkmark" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+          </label>
+
+          <!-- GCash -->
+          <label class="payment-method" onclick="selectPaymentMethod('gcash')">
+            <input type="radio" name="paymentMethod" value="gcash">
+            <div class="method-icon gcash-icon">
+              <img src="../../assets/img/gcash.png" alt="GCash" width="30" height="30">
+            </div>
+            <div class="method-info">
+              <h3>GCash</h3>
+              <p>Mobile wallet for Philippines</p>
+            </div>
+            <svg class="checkmark" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+          </label>
+        </form>
+
+        <!-- Card Details Form (shown based on selection) -->
+        <div id="cardDetailsSection" class="payment-details-section">
+          <h3>Card Information</h3>
+          <form id="cardDetailsForm">
+            <div class="form-group">
+              <label for="cardNumber">Card number <span class="required">*</span></label>
+              <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 1234 1234 1234" maxlength="19" required>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="expiry">Expiry <span class="required">*</span></label>
+                <input type="text" id="expiry" name="expiry" placeholder="MM / YY" maxlength="5" required>
+              </div>
+              <div class="form-group">
+                <label for="cvc">CVC <span class="required">*</span></label>
+                <input type="text" id="cvc" name="cvc" placeholder="CVC" maxlength="4" required>
+              </div>
+            </div>
+
+            <label class="checkbox-group">
+              <input type="checkbox" id="sameAsShipping" name="sameAsShipping" checked>
+              <span>Billing is same as shipping information</span>
+            </label>
+
+            <div id="billingSection" style="display:none;">
+              <h4>Billing Address</h4>
+              <div class="form-group">
+                <label for="billingCountry">Country or region <span class="required">*</span></label>
+                <select id="billingCountry" name="billingCountry">
+                  <option value="">Select country</option>
+                  <option value="US">United States</option>
+                  <option value="UK">United Kingdom</option>
+                  <option value="CA">Canada</option>
+                  <option value="AU">Australia</option>
+                  <option value="PH">Philippines</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="billingAddress">Address line 1 <span class="required">*</span></label>
+                <input type="text" id="billingAddress" name="billingAddress" placeholder="Street address">
+              </div>
+            </div>
+
+            <p class="info-text">By providing your card information, you allow Name Shop to change your card for future payments in accordance with their terms.</p>
+          </form>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE: ORDER SUMMARY -->
+      <div class="order-summary-section">
+        <h3>Order Summary</h3>
+        
+        <div class="order-items" id="orderItems">
+          <!-- Items loaded via API -->
+          <div class="order-item">
+            <div class="item-preview">
+              <img src="../../assets/img/sauvage.avif" alt="Product">
+            </div>
+            <div class="item-info">
+              <h4>Dior Sauvage</h4>
+              <p>100ml</p>
+              <p class="price">$120.00</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shipping Address -->
+        <div class="shipping-info">
+          <h4>Shipping Address</h4>
+          <div id="shippingAddressDisplay">
+            <p><strong id="shippingName">John Doe</strong></p>
+            <p id="shippingEmail">john@example.com</p>
+            <p id="shippingPhone">+1 (555) 123-4567</p>
+            <p id="shippingAddress">123 Street, City, State 12345</p>
+          </div>
+        </div>
+
+        <!-- Final Total -->
+        <div class="final-summary">
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span id="finalSubtotal">$120.00</span>
+          </div>
+          <div class="summary-row">
+            <span>Shipping</span>
+            <span id="finalShipping">$10.00</span>
+          </div>
+          <div class="summary-row">
+            <span>Tax</span>
+            <span id="finalTax">$0.00</span>
+          </div>
+          <div class="summary-row total">
+            <span>Total</span>
+            <span id="finalTotal">$130.00</span>
+          </div>
+        </div>
+
+        <!-- Security Info -->
+        <div class="security-info">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          <div>
+            <strong>Secure Payment</strong>
+            <p>Your payment information is encrypted and secure</p>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="payment-actions">
+          <button type="button" class="btn-secondary" onclick="goBackToCheckout()">Back</button>
+          <button type="button" class="btn-primary" id="payNowBtn" onclick="processPayment()">Pay Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-top">
+
+    <!-- LEFT -->
+    <div class="footer-brand">
+      <h3 class="footer-logo">Celestix</h3>
+      <p class="footer-desc">
+        Curated fragrances from iconic brands—discover scents that match your style
+        and elevate every moment.
+      </p>
+    </div>
+
+    <!-- CENTER (SOCIAL) -->
+    <div class="footer-social">
+      <a href="#" class="social-circle" aria-label="Facebook">f</a>
+      <a href="#" class="social-circle" aria-label="Twitter">𝕏</a>
+      <a href="#" class="social-circle" aria-label="YouTube">▶</a>
+      <a href="#" class="social-circle" aria-label="Instagram">◎</a>
+      <a href="#" class="social-circle" aria-label="Pinterest">p</a>
+    </div>
+
+    <!-- RIGHT (SUBSCRIBE) -->
+    <div class="footer-subscribe">
+      <small class="footer-kicker">— Get updates</small>
+      <h4>Subscribe for latest updates</h4>
+
+      <form class="subscribe-form">
+        <input type="email" placeholder="Your email address" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+  </div>
+
+  <div class="container footer-bottom">
+    <a href="#" class="footer-link">Privacy Policy</a>
+    <a href="#" class="footer-link">About Us</a>
+    <a href="#" class="footer-link">Contact Us</a>
+    <span class="footer-copy">© 2023 Celestix</span>
+  </div>
+</footer>
+
+<!-- Loading Overlay -->
+<div id="loadingOverlay" class="loading-overlay">
+  <div class="spinner"></div>
+  <p>Processing payment...</p>
+</div>
+
+<script src="./assets/js/payment.js"></script>
+</body>
+</html>
